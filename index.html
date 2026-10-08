@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/images/avatar.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antonin · Web Developer</title>
+    <meta name="description" content="Antonin — web developer building fast, user-centric web apps, often for gamers." />
+  </head>
+  <body>
+    <script>
+      // apply the saved (or system-preferred) Catppuccin flavor before first paint
+      (function () {
+        var flavor;
+        try {
+          flavor = localStorage.getItem("flavor");
+        } catch (e) {}
+        if (!flavor) {
+          flavor = matchMedia("(prefers-color-scheme: light)").matches ? "latte" : "mocha";
+        }
+        document.documentElement.dataset.flavor = flavor;
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
